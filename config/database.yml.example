@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  username: root
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: car_park_api_development
+
+test:
+  <<: *default
+  database: car_park_api_test
+
+production:
+  <<: *default
+  database: car_park_api_production
+  username: car_park_api
+  password: <%= ENV['CAR_PARK_API_DATABASE_PASSWORD'] %>
