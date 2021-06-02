@@ -13,14 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_06_02_082642) do
 
   create_table "permanent_parkers", charset: "utf8mb4", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "street_name"
-    t.string "building_number"
-    t.integer "zip"
-    t.string "city"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "street_name", null: false
+    t.string "building_number", null: false
+    t.integer "zip", null: false
+    t.string "city", null: false
   end
 
 end
