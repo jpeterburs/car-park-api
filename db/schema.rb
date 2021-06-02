@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_082642) do
+ActiveRecord::Schema.define(version: 2021_06_02_094120) do
 
   create_table "permanent_parkers", charset: "utf8mb4", force: :cascade do |t|
     t.string "first_name", null: false
@@ -21,4 +21,13 @@ ActiveRecord::Schema.define(version: 2021_06_02_082642) do
     t.string "city", null: false
   end
 
+  create_table "sessions", charset: "utf8mb4", force: :cascade do |t|
+    t.string "license_plate", null: false
+    t.bigint "permanent_parker_id"
+    t.datetime "entered_at", null: false
+    t.datetime "exited_at"
+    t.index ["permanent_parker_id"], name: "index_sessions_on_permanent_parker_id"
+  end
+
+  add_foreign_key "sessions", "permanent_parkers"
 end
