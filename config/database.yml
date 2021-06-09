@@ -2,8 +2,8 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   username: root
-  password:
-  host: localhost
+  password: password
+  host: car-park-api_db_1
 
 development:
   <<: *default

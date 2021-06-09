@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    image: mariadb
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  backend:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
