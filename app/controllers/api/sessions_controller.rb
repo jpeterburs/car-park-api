@@ -10,19 +10,17 @@ module Api
       @session.assign_attributes(entered_at: DateTime.now)
 
       if @session.save
-        render json: {}, status: :created
+        render status: :created
       else
         render json: { errors: @session.errors }, status: :bad_request
       end
     end
 
     def update
-      @session.assign_attributes(exited_at: DateTime.now)
+      @session.assign_attributes(exited_at: DateTime.now) if @session.exited_at.blank?
 
       if @session.save
-        render json: {}, status: :accepted
-      else
-        render json: { errors: @session.errors }, status: :bad_request
+        render status: :accepted
       end
     end
 
