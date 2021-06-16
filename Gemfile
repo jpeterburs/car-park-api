@@ -12,6 +12,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
