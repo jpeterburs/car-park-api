@@ -1,0 +1,147 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - db/*schema.rb
+    - db/migrate/*
+    - node_modules/**/*
+  NewCops: enable
+
+Layout/ClassStructure:
+  Enabled: true
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - association
+    - public_attribute_macros
+    - public_delegate
+    - macros
+    - public_class_methods
+    - initializer
+    - public_methods
+    - protected_attribute_macros
+    - protected_methods
+    - private_attribute_macros
+    - private_delegate
+    - private_methods
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/DuplicateElsifCondition:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+
+Metrics/BlockLength:
+  IgnoredMethods:
+    - describe
+    - context
+    - let
+    - before
+    - namespace
+    - shared_examples
+    - FactoryBot.define
+  Exclude:
+    - config/environments/*
+    - config/routes.rb
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+  Exclude:
+    - config/initializers/fuchs_api.rb
+    - config/initializers/fuchs_api_provider.rb
+    - config/routes.rb
+
+Style/AccessorGrouping:
+  Enabled: true
+Style/ArrayCoercion:
+  Enabled: true
+Style/AsciiComments:
+  AllowedChars:
+    - ä
+    - Ä
+    - ö
+    - Ö
+    - ü
+    - Ü
+    - ß
+Style/BisectedAttrAccessor:
+  Enabled: true
+Style/CaseLikeIf:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/ExponentialNotation:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashAsLastArrayItem:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashLikeCase:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/NumericLiterals:
+  Enabled: false
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Style/WordArray:
+  MinSize: 5
+
+Rails/Date:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/TimeZone:
+  Enabled: false
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - production
+
+Performance/AncestorsInclude:
+  Enabled: true
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+Performance/RedundantSortBlock:
+  Enabled: true
+Performance/RedundantStringChars:
+  Enabled: true
+Performance/ReverseFirst:
+  Enabled: true
+Performance/SortReverse:
+  Enabled: true
+Performance/Squeeze:
+  Enabled: true
+Performance/StringInclude:
+  Enabled: true
