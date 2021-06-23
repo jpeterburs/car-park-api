@@ -40,7 +40,7 @@ module CarParkApi
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: %i[get post options]
+        resource '*', headers: :any, methods: %i[get post put]
       end
     end
   end
