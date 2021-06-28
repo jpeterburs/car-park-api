@@ -1,1 +1,8 @@
-.git
+.bundle/
+.dockerignmore
+.git/
+.gitignore
+.rubocop.yml
+docker-compose.yml
+Dockerfile
+database/
